@@ -6,7 +6,7 @@
 <meta name="description" content="Smile Dental Care – Premier dental clinic in Doha, Qatar. Expert dental treatments with a gentle touch. | عيادة سمايل لطب الأسنان – دوحة، قطر">
 <title>Smile Dental Care | سمايل للعناية بالأسنان</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Raleway:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700;900&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 <style>
@@ -22,9 +22,9 @@
   --off-white: #F5FAFA;
   --grey: #6B7B8D;
   --light-grey: #EEF4F4;
-  --font-en: 'Inter', 'Raleway', sans-serif;
+  --font-en: 'Outfit', 'DM Sans', sans-serif;
   --font-ar: 'Cairo', sans-serif;
-  --font-heading: 'Cormorant Garamond', 'Raleway', serif;
+  --font-heading: 'Cormorant Garamond', serif;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -48,15 +48,15 @@ body.ar{font-family:var(--font-ar);direction:rtl}
 /* ── NAVBAR ── */
 #navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 5%;transition:all .4s ease;background:transparent}
 #navbar.scrolled{background:rgba(13,33,55,.96);backdrop-filter:blur(12px);box-shadow:0 2px 20px rgba(0,0,0,.3)}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;height:80px;gap:20px}
-.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:80px;gap:20px;min-width:0;overflow:hidden}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0;min-width:0}
 .logo-icon{width:48px;height:48px;background:linear-gradient(135deg,var(--teal),var(--teal-dark));border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 15px rgba(11,191,186,.4)}
 .logo-text .en{font-family:var(--font-en);font-size:1.3rem;font-weight:900;color:var(--white);letter-spacing:1px;line-height:1}
 .logo-text .ar-sub{font-family:var(--font-ar);font-size:.7rem;color:var(--teal);line-height:1.4;margin-top:2px}
-.nav-links{display:flex;align-items:center;gap:8px;list-style:none}
+.nav-links{display:flex;align-items:center;gap:4px;list-style:none;flex:1;justify-content:center;min-width:0}
 .nav-links a{color:rgba(255,255,255,.85);text-decoration:none;font-size:.85rem;font-weight:600;padding:8px 14px;border-radius:6px;transition:all .3s;letter-spacing:.5px}
 .nav-links a:hover{color:var(--teal);background:rgba(11,191,186,.1)}
-.nav-right{display:flex;align-items:center;gap:12px}
+.nav-right{display:flex;align-items:center;gap:10px;flex-shrink:0}
 .lang-btn{background:rgba(11,191,186,.15);border:1.5px solid var(--teal);color:var(--teal);padding:7px 14px;border-radius:20px;cursor:pointer;font-size:.76rem;font-weight:700;transition:all .3s;font-family:inherit;white-space:nowrap}
 .lang-btn:hover{background:var(--teal);color:var(--white)}
 .cta-nav{background:linear-gradient(135deg,var(--teal),var(--teal-dark));color:var(--white);border:none;padding:9px 16px;border-radius:25px;font-size:.8rem;font-weight:700;cursor:pointer;transition:all .3s;font-family:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
@@ -84,8 +84,8 @@ body.ar{font-family:var(--font-ar);direction:rtl}
 .hero-title-ar{font-family:var(--font-ar);font-size:clamp(1.4rem,3vw,2.2rem);font-weight:700;color:rgba(255,255,255,.6);margin-bottom:24px;line-height:1.4}
 .hero-desc{color:rgba(255,255,255,.65);font-size:1rem;line-height:1.8;margin-bottom:36px;max-width:480px}
 .hero-btns{display:flex;gap:16px;flex-wrap:wrap}
-.btn-primary{background:linear-gradient(135deg,var(--teal),var(--teal-dark));color:white;padding:15px 32px;border-radius:30px;font-size:.95rem;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .3s;box-shadow:0 8px 25px rgba(11,191,186,.4);border:none;cursor:pointer;font-family:inherit}
-.btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 35px rgba(11,191,186,.6)}
+.btn-primary{background:linear-gradient(135deg,var(--teal),var(--teal-dark));color:white;padding:15px 32px;border-radius:30px;font-size:.95rem;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .2s;box-shadow:0 8px 25px rgba(11,191,186,.4);border:none;cursor:pointer;font-family:inherit}
+.btn-primary:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 12px 35px rgba(11,191,186,.6)}
 .btn-outline{background:transparent;color:white;padding:15px 32px;border-radius:30px;font-size:.95rem;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .3s;border:2px solid rgba(255,255,255,.3)}
 .btn-outline:hover{border-color:var(--teal);color:var(--teal);background:rgba(11,191,186,.08)}
 .hero-stats{display:flex;gap:30px;margin-top:48px}
@@ -257,8 +257,8 @@ body.ar .appt-step:not(:last-child)::after{left:auto;right:19px}
 .btn-book-submit::before{content:"";position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent);transition:left .55s}
 .btn-book-submit:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(11,191,186,.55)}
 .btn-book-submit:hover::before{left:100%}
-.form-trust{display:flex;justify-content:center;gap:18px;margin-top:14px;flex-wrap:wrap}
-.trust-item{display:flex;align-items:center;gap:5px;font-size:.7rem;color:var(--grey)}
+.form-trust{display:flex;justify-content:center;gap:10px;margin-top:16px;flex-wrap:wrap}
+.trust-item{display:inline-flex;align-items:center;gap:6px;font-size:.7rem;color:var(--grey);background:var(--off-white);border:1px solid var(--light-grey);padding:5px 12px;border-radius:20px;font-weight:500}
 
 /* ── LOCATION ── */
 #location{background:white;padding:0 0 90px}
@@ -346,8 +346,10 @@ body.ar .ticker-track{animation-direction:reverse}
 
 /* Text switching */
 [data-en],[data-ar]{transition:opacity .3s}
-body.ar [data-en]{display:none}
-body:not(.ar) [data-ar]{display:none}
+body.ar [data-en]:not([data-ar]){display:none}
+body:not(.ar) [data-ar]:not([data-en]){display:none}
+.service-title-ar,.stat-label-ar,.team-role-ar{display:none}
+body:not(.ar) .logo-text .ar-sub{display:none}
 
 /* ── RESPONSIVE ── */
 @media(max-width:1100px){
@@ -459,7 +461,7 @@ body:not(.ar) [data-ar]{display:none}
         <span data-en="Your Perfect <span class='gradient'>Smile</span> Starts Here" data-ar="">Your Perfect <span class="gradient">Smile</span> Starts Here</span>
         <span data-ar="ابتسامتك المثالية<br><span class='gradient'>تبدأ هنا</span>" style="display:none"></span>
       </h1>
-      <p class="hero-title-ar" data-en="سمايل للعناية بالأسنان — الدوحة، قطر" data-ar="Smile Dental Care — Doha, Qatar">سمايل للعناية بالأسنان — الدوحة، قطر</p>
+      <p class="hero-title-ar" data-ar="سمايل للعناية بالأسنان — الدوحة، قطر"></p>
       <p class="hero-desc" data-en="Experience world-class dental care in the heart of Doha. Our expert team delivers gentle, effective treatments tailored to you." data-ar="استمتع برعاية أسنان عالمية المستوى في قلب الدوحة. فريقنا المتخصص يقدم علاجات فعّالة ومريحة مصممة خصيصاً لك.">Experience world-class dental care in the heart of Doha. Our expert team delivers gentle, effective treatments tailored to you.</p>
       <div class="hero-btns">
         <a href="#appointment" class="btn-primary">
@@ -834,21 +836,21 @@ body:not(.ar) [data-ar]{display:none}
 
         <div class="appt-quick-contact">
           <div class="appt-contact-row">
-            <div class="appt-contact-icon">📞</div>
+            <div class="appt-contact-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.17h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 5.29 5.29l.94-.94a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
             <div>
               <div class="appt-contact-label" data-en="CALL US DIRECTLY" data-ar="اتصل بنا مباشرة">CALL US DIRECTLY</div>
               <div class="appt-contact-val"><a href="tel:+97444479542">+974 4447 9542</a></div>
             </div>
           </div>
           <div class="appt-contact-row">
-            <div class="appt-contact-icon">🕐</div>
+            <div class="appt-contact-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
             <div>
               <div class="appt-contact-label" data-en="WORKING HOURS" data-ar="ساعات العمل">WORKING HOURS</div>
               <div class="appt-contact-val" data-en="Daily — Open until 9:00 PM" data-ar="يومياً — مفتوح حتى 9:00 مساءً">Daily — Open until 9:00 PM</div>
             </div>
           </div>
           <div class="appt-contact-row">
-            <div class="appt-contact-icon">📍</div>
+            <div class="appt-contact-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
             <div>
               <div class="appt-contact-label" data-en="ADDRESS" data-ar="العنوان">ADDRESS</div>
               <div class="appt-contact-val" data-en="8FM7+XWG, Doha, Qatar" data-ar="8FM7+XWG، الدوحة، قطر">8FM7+XWG, Doha, Qatar</div>
@@ -928,7 +930,7 @@ body:not(.ar) [data-ar]{display:none}
 
   <div class="loc-info-cards">
     <div class="loc-info-card" data-aos="fade-up" data-aos-delay="0">
-      <div class="loc-card-icon">📍</div>
+      <div class="loc-card-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
       <div class="loc-card-label" data-en="ADDRESS" data-ar="العنوان">ADDRESS</div>
       <div class="loc-card-val">
         <a href="https://maps.google.com/?q=8FM7+XWG,+Doha,+Qatar" target="_blank" data-en="8FM7+XWG, Doha, Qatar" data-ar="8FM7+XWG، الدوحة، قطر">8FM7+XWG, Doha, Qatar</a>
@@ -936,13 +938,13 @@ body:not(.ar) [data-ar]{display:none}
       <div class="loc-card-sub" data-en="Qatar, Doha" data-ar="قطر، الدوحة">Qatar, Doha</div>
     </div>
     <div class="loc-info-card" data-aos="fade-up" data-aos-delay="100">
-      <div class="loc-card-icon">📞</div>
+      <div class="loc-card-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.17h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 5.29 5.29l.94-.94a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
       <div class="loc-card-label" data-en="PHONE" data-ar="الهاتف">PHONE</div>
       <div class="loc-card-val"><a href="tel:+97444479542">+974 4447 9542</a></div>
       <div class="loc-card-sub" data-en="Available during working hours" data-ar="متاح خلال ساعات العمل">Available during working hours</div>
     </div>
     <div class="loc-info-card" data-aos="fade-up" data-aos-delay="200">
-      <div class="loc-card-icon">🕐</div>
+      <div class="loc-card-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
       <div class="loc-card-label" data-en="WORKING HOURS" data-ar="ساعات العمل">WORKING HOURS</div>
       <div class="loc-card-val">
         <table class="hours-mini">
