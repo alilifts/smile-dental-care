@@ -48,12 +48,12 @@ body.ar{font-family:var(--font-ar);direction:rtl}
 /* ── NAVBAR ── */
 #navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 5%;transition:all .4s ease;background:transparent}
 #navbar.scrolled{background:rgba(13,33,55,.96);backdrop-filter:blur(12px);box-shadow:0 2px 20px rgba(0,0,0,.3)}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;height:80px;gap:20px;min-width:0;overflow:hidden}
-.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0;min-width:0}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}
 .logo-icon{width:48px;height:48px;background:linear-gradient(135deg,var(--teal),var(--teal-dark));border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 15px rgba(11,191,186,.4)}
 .logo-text .en{font-family:var(--font-en);font-size:1.3rem;font-weight:900;color:var(--white);letter-spacing:1px;line-height:1}
 .logo-text .ar-sub{font-family:var(--font-ar);font-size:.7rem;color:var(--teal);line-height:1.4;margin-top:2px}
-.nav-links{display:flex;align-items:center;gap:4px;list-style:none;flex:1;justify-content:center;min-width:0}
+.nav-links{display:flex;align-items:center;gap:4px;list-style:none;flex:1 1 0;justify-content:center;min-width:0;overflow:hidden}
 .nav-links a{color:rgba(255,255,255,.85);text-decoration:none;font-size:.85rem;font-weight:600;padding:8px 14px;border-radius:6px;transition:all .3s;letter-spacing:.5px}
 .nav-links a:hover{color:var(--teal);background:rgba(11,191,186,.1)}
 .nav-right{display:flex;align-items:center;gap:10px;flex-shrink:0}
@@ -182,12 +182,11 @@ section{padding:90px 5%}
 
 /* ── GALLERY ── */
 #gallery{background:white}
-.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,200px);gap:16px}
-.gallery-item{border-radius:16px;overflow:hidden;position:relative;cursor:pointer}
-.gallery-item img{width:100%;height:100%;object-fit:cover;transition:.5s}
-.gallery-item:hover img{transform:scale(1.08)}
-.gallery-item.large{grid-row:span 2;grid-column:span 1}
-.gallery-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,33,55,.8),transparent);opacity:0;transition:.3s;display:flex;align-items:flex-end;padding:20px}
+.gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.gallery-item{border-radius:12px;overflow:hidden;position:relative;cursor:pointer;height:260px}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .3s ease}
+.gallery-item:hover img{transform:scale(1.02)}
+.gallery-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,33,55,.8) 0%,rgba(11,191,186,.1) 100%);opacity:0;transition:.3s ease;display:flex;align-items:flex-end;padding:20px}
 .gallery-item:hover .gallery-overlay{opacity:1}
 .gallery-overlay span{color:white;font-weight:700;font-size:.9rem}
 
@@ -241,12 +240,10 @@ body.ar .appt-step:not(:last-child)::after{left:auto;right:19px}
 .appt-form-card{background:white;border-radius:28px;padding:40px 36px;box-shadow:0 40px 100px rgba(0,0,0,.35);position:relative;overflow:hidden}
 .appt-form-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--teal),#7FFFD4,var(--red))}
 .appt-form-title{font-size:1.4rem;font-weight:700;color:var(--navy);margin-bottom:4px;font-family:var(--font-heading)}
-.appt-form-sub{font-size:.82rem;color:var(--grey);margin-bottom:22px}
+.appt-form-sub{font-size:.82rem;color:var(--teal);margin-bottom:22px;font-weight:600}
 .service-select-label{font-size:.7rem;font-weight:700;color:var(--navy);letter-spacing:.5px;margin-bottom:10px}
-.service-chip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:22px}
-.service-chip{border:1.5px solid var(--light-grey);border-radius:11px;padding:10px 6px;text-align:center;cursor:pointer;transition:all .2s;background:var(--off-white);font-size:.78rem;font-weight:600;color:var(--navy);font-family:inherit;user-select:none}
-.service-chip:hover{border-color:var(--teal);background:var(--teal-light);color:var(--teal-dark)}
-.service-chip.selected{border-color:var(--teal);background:linear-gradient(135deg,rgba(11,191,186,.12),rgba(11,191,186,.05));color:var(--teal-dark);box-shadow:0 0 0 3px rgba(11,191,186,.15)}
+.service-select{width:100%;border:1.5px solid var(--light-grey);border-radius:10px;padding:14px 16px;font-size:.87rem;color:var(--navy);font-family:inherit;background:var(--off-white);transition:.25s;margin-bottom:22px;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%230BBFBA' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;cursor:pointer}
+.service-select:focus{outline:none;border-color:var(--teal);background-color:white;box-shadow:0 0 0 3px rgba(11,191,186,.1)}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
 .form-field{display:flex;flex-direction:column;gap:5px}
 .form-field label{font-size:.7rem;font-weight:700;color:var(--navy);letter-spacing:.5px}
@@ -378,7 +375,6 @@ body:not(.ar) .logo-text .ar-sub{display:none}
   .footer-bottom-links{justify-content:center}
   .hero-stats{justify-content:center}
   .loc-info-cards{grid-template-columns:1fr;margin-top:20px}
-  .service-chip-grid{grid-template-columns:repeat(2,1fr)}
   .form-row{grid-template-columns:1fr}
   .map-cta-overlay{flex-direction:column;align-items:center}
   .appt-form-card{padding:28px 22px}
@@ -554,42 +550,36 @@ body:not(.ar) .logo-text .ar-sub{display:none}
       <div class="service-card" data-aos="fade-up" data-aos-delay="0">
         <div class="service-icon">🦷</div>
         <div class="service-title" data-en="General Dentistry" data-ar="طب الأسنان العام">General Dentistry</div>
-        <div class="service-title-ar" data-en="طب الأسنان العام" data-ar="General Dentistry">طب الأسنان العام</div>
         <p class="service-desc" data-en="Routine check-ups, professional cleaning, fillings, and preventive care to maintain a healthy smile." data-ar="فحوصات دورية، تنظيف احترافي، حشوات، ورعاية وقائية للحفاظ على ابتسامة صحية.">Routine check-ups, professional cleaning, fillings, and preventive care to maintain a healthy smile.</p>
         <a href="#appointment" class="service-link" data-en="Book Now →" data-ar="احجز الآن ←">Book Now →</a>
       </div>
       <div class="service-card" data-aos="fade-up" data-aos-delay="80">
         <div class="service-icon">✨</div>
         <div class="service-title" data-en="Teeth Whitening" data-ar="تبييض الأسنان">Teeth Whitening</div>
-        <div class="service-title-ar" data-en="تبييض الأسنان" data-ar="Teeth Whitening">تبييض الأسنان</div>
         <p class="service-desc" data-en="Professional whitening treatments that safely brighten your smile by several shades in a single visit." data-ar="علاجات تبييض احترافية تُشرق ابتسامتك بأمان بعدة درجات في زيارة واحدة.">Professional whitening treatments that safely brighten your smile by several shades in a single visit.</p>
         <a href="#appointment" class="service-link" data-en="Book Now →" data-ar="احجز الآن ←">Book Now →</a>
       </div>
       <div class="service-card" data-aos="fade-up" data-aos-delay="160">
         <div class="service-icon">🔬</div>
         <div class="service-title" data-en="Dental Implants" data-ar="زراعة الأسنان">Dental Implants</div>
-        <div class="service-title-ar" data-en="زراعة الأسنان" data-ar="Dental Implants">زراعة الأسنان</div>
         <p class="service-desc" data-en="Permanent tooth replacement solutions that look and function just like your natural teeth." data-ar="حلول استبدال دائمة للأسنان تبدو وتعمل تماماً كأسنانك الطبيعية.">Permanent tooth replacement solutions that look and function just like your natural teeth.</p>
         <a href="#appointment" class="service-link" data-en="Book Now →" data-ar="احجز الآن ←">Book Now →</a>
       </div>
       <div class="service-card" data-aos="fade-up" data-aos-delay="240">
         <div class="service-icon">📐</div>
         <div class="service-title" data-en="Orthodontics" data-ar="تقويم الأسنان">Orthodontics</div>
-        <div class="service-title-ar" data-en="تقويم الأسنان" data-ar="Orthodontics">تقويم الأسنان</div>
         <p class="service-desc" data-en="Traditional braces and clear aligner options to straighten teeth and perfect your bite." data-ar="تقويم تقليدي وخيارات المحاذاة الشفافة لتقويم الأسنان وتحسين الإطباق.">Traditional braces and clear aligner options to straighten teeth and perfect your bite.</p>
         <a href="#appointment" class="service-link" data-en="Book Now →" data-ar="احجز الآن ←">Book Now →</a>
       </div>
       <div class="service-card" data-aos="fade-up" data-aos-delay="320">
         <div class="service-icon">💎</div>
         <div class="service-title" data-en="Cosmetic Dentistry" data-ar="طب الأسنان التجميلي">Cosmetic Dentistry</div>
-        <div class="service-title-ar" data-en="طب الأسنان التجميلي" data-ar="Cosmetic Dentistry">طب الأسنان التجميلي</div>
         <p class="service-desc" data-en="Veneers, bonding, and smile makeovers designed to give you the confidence to show your best smile." data-ar="قشرة خزفية، ربط، وتصميم ابتسامة مصمم لمنحك الثقة لإظهار أجمل ابتسامة.">Veneers, bonding, and smile makeovers designed to give you the confidence to show your best smile.</p>
         <a href="#appointment" class="service-link" data-en="Book Now →" data-ar="احجز الآن ←">Book Now →</a>
       </div>
       <div class="service-card" data-aos="fade-up" data-aos-delay="400">
         <div class="service-icon">🚑</div>
         <div class="service-title" data-en="Emergency Dental Care" data-ar="علاج طارئ للأسنان">Emergency Dental Care</div>
-        <div class="service-title-ar" data-en="علاج طارئ للأسنان" data-ar="Emergency Dental Care">علاج طارئ للأسنان</div>
         <p class="service-desc" data-en="Prompt pain relief and treatment for dental emergencies — we're here when you need us most." data-ar="تسكين فوري للألم وعلاج حالات طوارئ الأسنان — نحن هنا عندما تحتاجنا أكثر.">Prompt pain relief and treatment for dental emergencies — we're here when you need us most.</p>
         <a href="tel:+97444479542" class="service-link" data-en="Call Now →" data-ar="اتصل الآن ←">Call Now →</a>
       </div>
@@ -640,22 +630,18 @@ body:not(.ar) .logo-text .ar-sub{display:none}
       <div class="stat-item" data-aos="fade-up" data-aos-delay="0">
         <span class="stat-num" data-count="2000">0</span>
         <div class="stat-label" data-en="Happy Patients" data-ar="مريض سعيد">Happy Patients</div>
-        <div class="stat-label-ar" data-en="مرضى سعداء" data-ar="Happy Patients">مرضى سعداء</div>
       </div>
       <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
         <span class="stat-num" data-count="15">0</span>
         <div class="stat-label" data-en="Years of Experience" data-ar="سنوات الخبرة">Years of Experience</div>
-        <div class="stat-label-ar" data-en="سنوات الخبرة" data-ar="Years of Experience">سنوات الخبرة</div>
       </div>
       <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
         <span class="stat-num" data-count="20">0</span>
         <div class="stat-label" data-en="Dental Services" data-ar="خدمات أسنان">Dental Services</div>
-        <div class="stat-label-ar" data-en="خدمة متوفرة" data-ar="Services Available">خدمة متوفرة</div>
       </div>
       <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
         <span class="stat-num" data-count="98">0</span>
         <div class="stat-label" data-en="% Satisfaction Rate" data-ar="% معدل الرضا">% Satisfaction Rate</div>
-        <div class="stat-label-ar" data-en="معدل رضا المرضى" data-ar="Patient Satisfaction">معدل رضا المرضى</div>
       </div>
     </div>
   </div>
@@ -708,7 +694,7 @@ body:not(.ar) .logo-text .ar-sub{display:none}
       <h2 class="section-title" data-en="A <span>Modern</span> Welcoming Space" data-ar="مساحة <span>حديثة</span> ومرحبة">A <span>Modern</span> Welcoming Space</h2>
     </div>
     <div class="gallery-grid" data-aos="fade-up" data-aos-delay="100">
-      <div class="gallery-item large">
+      <div class="gallery-item">
         <img src="images/storefront1.jpg" alt="Smile Dental Care at night">
         <div class="gallery-overlay"><span data-en="Our Clinic at Night" data-ar="عيادتنا في الليل">Our Clinic at Night</span></div>
       </div>
@@ -723,10 +709,6 @@ body:not(.ar) .logo-text .ar-sub{display:none}
       <div class="gallery-item">
         <img src="images/storefront3.jpg" alt="Clinic exterior">
         <div class="gallery-overlay"><span data-en="Clinic Exterior" data-ar="واجهة العيادة">Clinic Exterior</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1588776814546-1ffbb2c9a8ba?w=600&q=80" alt="Dental equipment">
-        <div class="gallery-overlay"><span data-en="Modern Equipment" data-ar="معدات حديثة">Modern Equipment</span></div>
       </div>
     </div>
   </div>
@@ -867,15 +849,15 @@ body:not(.ar) .logo-text .ar-sub{display:none}
 
           <form onsubmit="submitForm(event)">
             <div class="service-select-label" data-en="SELECT SERVICE" data-ar="اختر الخدمة">SELECT SERVICE</div>
-            <div class="service-chip-grid">
-              <div class="service-chip" onclick="selectService(this,'General Check-up','فحص عام')" data-en="General Check-up" data-ar="فحص عام">General Check-up</div>
-              <div class="service-chip" onclick="selectService(this,'Teeth Whitening','تبييض الأسنان')" data-en="Teeth Whitening" data-ar="تبييض الأسنان">Teeth Whitening</div>
-              <div class="service-chip" onclick="selectService(this,'Dental Implants','زراعة الأسنان')" data-en="Dental Implants" data-ar="زراعة الأسنان">Dental Implants</div>
-              <div class="service-chip" onclick="selectService(this,'Orthodontics','تقويم الأسنان')" data-en="Orthodontics" data-ar="تقويم الأسنان">Orthodontics</div>
-              <div class="service-chip" onclick="selectService(this,'Cosmetic Dentistry','طب التجميلي')" data-en="Cosmetic Dentistry" data-ar="طب التجميلي">Cosmetic Dentistry</div>
-              <div class="service-chip" onclick="selectService(this,'Emergency','طارئ')" data-en="Emergency" data-ar="طارئ">Emergency</div>
-            </div>
-            <input type="hidden" id="selected-service" name="service">
+            <select class="service-select" name="service" id="selected-service">
+              <option value="" data-en="— Choose a service —" data-ar="— اختر خدمة —">— Choose a service —</option>
+              <option value="General Check-up" data-en="General Check-up" data-ar="فحص عام">General Check-up</option>
+              <option value="Teeth Whitening" data-en="Teeth Whitening" data-ar="تبييض الأسنان">Teeth Whitening</option>
+              <option value="Dental Implants" data-en="Dental Implants" data-ar="زراعة الأسنان">Dental Implants</option>
+              <option value="Orthodontics" data-en="Orthodontics" data-ar="تقويم الأسنان">Orthodontics</option>
+              <option value="Cosmetic Dentistry" data-en="Cosmetic Dentistry" data-ar="طب التجميلي">Cosmetic Dentistry</option>
+              <option value="Emergency" data-en="Emergency" data-ar="طارئ">Emergency</option>
+            </select>
 
             <div class="form-row">
               <div class="form-field">
@@ -1190,14 +1172,6 @@ function toggleMenu() {
   document.getElementById('mobile-menu').classList.toggle('open');
 }
 
-// SERVICE CHIP SELECTION
-function selectService(el, nameEn, nameAr) {
-  document.querySelectorAll('.service-chip').forEach(c => c.classList.remove('selected'));
-  el.classList.add('selected');
-  const input = document.getElementById('selected-service');
-  if (input) input.value = isAr ? nameAr : nameEn;
-}
-
 // FORM SUBMIT
 function submitForm(e) {
   e.preventDefault();
@@ -1208,7 +1182,6 @@ function submitForm(e) {
     btn.innerHTML = '<span data-en="Confirm Appointment" data-ar="تأكيد الموعد">Confirm Appointment</span>';
     btn.style.background = '';
     e.target.reset();
-    document.querySelectorAll('.service-chip').forEach(c => c.classList.remove('selected'));
   }, 3000);
 }
 
