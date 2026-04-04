@@ -368,12 +368,56 @@ body.ar .about-feature:hover { transform:translateX(-4px); }
 .transform-info h4 { font-size:16px; font-weight:800; color:white; margin-bottom:6px; }
 .transform-info p { font-size:13px; color:rgba(255,255,255,0.55); line-height:1.5; }
 
+/* DOCTORS */
+.doctors { background: white; }
+.doctors-grid { display:grid; grid-template-columns:1fr 1fr; gap:40px; margin-top:56px; }
+.doctor-card {
+  border-radius:var(--radius-lg); overflow:hidden;
+  border:1.5px solid var(--border); transition:all 0.35s;
+  background:white; box-shadow:0 4px 20px rgba(0,0,0,0.05);
+}
+.doctor-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-lg); border-color:var(--teal); }
+.doctor-avatar {
+  width:100%; aspect-ratio:4/3; position:relative; overflow:hidden;
+  background:linear-gradient(145deg, var(--navy) 0%, var(--navy-mid) 60%, var(--teal-dark) 100%);
+  display:flex; align-items:center; justify-content:center;
+}
+.doctor-avatar-inner {
+  width:120px; height:120px; border-radius:50%;
+  background:linear-gradient(135deg,var(--teal),var(--teal-dark));
+  display:flex; align-items:center; justify-content:center;
+  font-size:48px; font-weight:800; color:white; letter-spacing:-2px;
+  box-shadow:0 8px 32px rgba(0,0,0,0.3);
+}
+.doctor-badge {
+  position:absolute; bottom:16px; left:16px;
+  background:var(--teal); color:white;
+  padding:5px 14px; border-radius:20px; font-size:12px; font-weight:700;
+  letter-spacing:0.5px;
+}
+body.ar .doctor-badge { left:auto; right:16px; }
+.doctor-info { padding:28px; }
+.doctor-name { font-size:20px; font-weight:800; color:var(--navy); margin-bottom:4px; }
+.doctor-title { font-size:14px; color:var(--teal); font-weight:600; margin-bottom:16px; }
+.doctor-since {
+  display:inline-flex; align-items:center; gap:6px;
+  background:var(--teal-light); color:var(--teal-dark);
+  font-size:12px; font-weight:700; padding:5px 12px; border-radius:8px; margin-bottom:20px;
+}
+.doctor-schedule { display:flex; flex-direction:column; gap:10px; }
+.schedule-branch { font-size:12px; font-weight:700; color:var(--navy); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:4px; display:flex; align-items:center; gap:6px; }
+.schedule-branch i { color:var(--teal); }
+.schedule-row { display:flex; justify-content:space-between; align-items:center; font-size:13px; color:var(--text-light); padding:6px 0; border-bottom:1px solid var(--border); }
+.schedule-row:last-child { border-bottom:none; }
+.schedule-day { font-weight:600; color:var(--text); }
+@media(max-width:768px) { .doctors-grid { grid-template-columns:1fr; gap:24px; } }
+
 /* TESTIMONIALS */
 .testimonials { background: var(--off-white); }
 .testimonials-slider { margin-top:56px; position:relative; overflow:hidden; }
 .testimonials-track { display:flex; gap:24px; transition:transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94); }
 .t-card {
-  min-width:calc(33.33% - 16px); background:white; border-radius:var(--radius-lg);
+  background:white; border-radius:var(--radius-lg);
   padding:28px; border:1.5px solid var(--border); transition:all 0.3s; flex-shrink:0;
 }
 .t-card:hover { box-shadow:var(--shadow-lg); transform:translateY(-4px); }
@@ -575,6 +619,7 @@ body.ar .wa-float { right:auto; left:28px; }
     <li><a href="#about" data-en="About" data-ar="من نحن">About</a></li>
     <li><a href="#services" data-en="Services" data-ar="خدماتنا">Services</a></li>
     <li><a href="#transformations" data-en="Results" data-ar="نتائجنا">Results</a></li>
+    <li><a href="#doctors" data-en="Doctors" data-ar="أطباؤنا">Doctors</a></li>
     <li><a href="#testimonials" data-en="Reviews" data-ar="آراء العملاء">Reviews</a></li>
     <li><a href="#booking" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
   </ul>
@@ -615,7 +660,7 @@ body.ar .wa-float { right:auto; left:28px; }
       <div class="hero-btns">
         <a href="#booking" class="btn-primary">
           <i class="fas fa-calendar-check"></i>
-          <span data-en="Book Free Consultation" data-ar="احجز استشارة مجانية">Book Free Consultation</span>
+          <span data-en="Book Your Appointment" data-ar="احجز موعدك الآن">Book Your Appointment</span>
         </a>
         <a href="#services" class="btn-secondary">
           <i class="fas fa-stethoscope"></i>
@@ -869,6 +914,64 @@ body.ar .wa-float { right:auto; left:28px; }
   </div>
 </section>
 
+<!-- DOCTORS -->
+<section class="doctors" id="doctors">
+  <div class="container">
+    <div style="text-align:center;" class="reveal">
+      <div class="section-label" style="justify-content:center;"><span data-en="Our Team" data-ar="فريقنا">Our Team</span></div>
+      <h2 class="section-title" data-en="Meet Our <span>Doctors</span>" data-ar="تعرّف على <span>أطبائنا</span>">Meet Our <span>Doctors</span></h2>
+      <p class="section-desc" style="max-width:520px;margin:0 auto;"
+         data-en="Experienced specialists dedicated to giving you the best care and the most beautiful smile."
+         data-ar="متخصصون ذوو خبرة ملتزمون بتقديم أفضل رعاية وأجمل ابتسامة لك.">
+        Experienced specialists dedicated to giving you the best care and the most beautiful smile.
+      </p>
+    </div>
+    <div class="doctors-grid reveal">
+
+      <!-- Dr. Hadiel -->
+      <div class="doctor-card">
+        <div class="doctor-avatar">
+          <div class="doctor-avatar-inner">HA</div>
+          <div class="doctor-badge" data-en="Orthodontist" data-ar="أخصائية تقويم أسنان">Orthodontist</div>
+        </div>
+        <div class="doctor-info">
+          <div class="doctor-name" data-en="Dr. Hadiel Abdulrazzak Al Ali" data-ar="د. هادييل عبد الرزاق آل علي">Dr. Hadiel Abdulrazzak Al Ali</div>
+          <div class="doctor-title" data-en="Specialist in Orthodontics" data-ar="أخصائية في تقويم الأسنان">Specialist in Orthodontics</div>
+          <div class="doctor-since"><i class="fas fa-award"></i><span data-en="With us since 2014" data-ar="معنا منذ 2014">With us since 2014</span></div>
+          <div class="doctor-schedule">
+            <div class="schedule-branch"><i class="fas fa-map-marker-alt"></i><span data-en="Landmark Branch" data-ar="فرع لاندمارك">Landmark Branch</span></div>
+            <div class="schedule-row"><span class="schedule-day" data-en="Sat" data-ar="السبت">Sat</span><span>12:00 PM – 7:00 PM</span></div>
+            <div class="schedule-row"><span class="schedule-day" data-en="Sun & Wed" data-ar="الأحد والأربعاء">Sun & Wed</span><span>1:00 PM – 8:00 PM</span></div>
+            <div class="schedule-row" style="margin-bottom:14px;"><span class="schedule-day" data-en="Mon" data-ar="الاثنين">Mon</span><span>4:00 PM – 8:00 PM</span></div>
+            <div class="schedule-branch"><i class="fas fa-map-marker-alt"></i><span data-en="Muaither Branch" data-ar="فرع المعيذر">Muaither Branch</span></div>
+            <div class="schedule-row"><span class="schedule-day" data-en="Tue" data-ar="الثلاثاء">Tue</span><span>4:00 PM – 8:00 PM</span></div>
+            <div class="schedule-row"><span class="schedule-day" data-en="Thu" data-ar="الخميس">Thu</span><span>1:00 PM – 8:00 PM</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dr. Zaher -->
+      <div class="doctor-card">
+        <div class="doctor-avatar">
+          <div class="doctor-avatar-inner">ZB</div>
+          <div class="doctor-badge" data-en="Oral Surgery & Implants" data-ar="جراحة الفم وزراعة الأسنان">Oral Surgery & Implants</div>
+        </div>
+        <div class="doctor-info">
+          <div class="doctor-name" data-en="Dr. Zaher Baddoura" data-ar="د. زاهر بدورة">Dr. Zaher Baddoura</div>
+          <div class="doctor-title" data-en="Implantology & Oral Surgery · Medical Director, Muaither" data-ar="زراعة الأسنان وجراحة الفم · المدير الطبي، المعيذر">Implantology & Oral Surgery · Medical Director, Muaither</div>
+          <div class="doctor-since"><i class="fas fa-award"></i><span data-en="With us since 2009" data-ar="معنا منذ 2009">With us since 2009</span></div>
+          <div class="doctor-schedule">
+            <div class="schedule-branch"><i class="fas fa-map-marker-alt"></i><span data-en="Muaither Branch" data-ar="فرع المعيذر">Muaither Branch</span></div>
+            <div class="schedule-row"><span class="schedule-day" data-en="Sun – Thu" data-ar="الأحد – الخميس">Sun – Thu</span><span>9:00 AM – 12:00 PM &amp; 4:00 – 9:00 PM</span></div>
+            <div class="schedule-row"><span class="schedule-day" data-en="Sat" data-ar="السبت">Sat</span><span>4:00 PM – 9:00 PM</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- TESTIMONIALS -->
 <section class="testimonials" id="testimonials">
   <div class="container">
@@ -938,9 +1041,9 @@ body.ar .wa-float { right:auto; left:28px; }
           <br><span data-en="<span>Smile?</span>" data-ar="<span>ابتسامة؟</span>"><span>Smile?</span></span>
         </h2>
         <p class="section-desc"
-           data-en="Book a free consultation today. Our team will assess your needs and create a personalised treatment plan just for you."
-           data-ar="احجز استشارة مجانية اليوم. سيقيّم فريقنا احتياجاتك ويضع خطة علاجية مخصصة لك.">
-          Book a free consultation today. Our team will assess your needs and create a personalised treatment plan just for you.
+           data-en="Book your appointment today. Our team will assess your needs and create a personalised treatment plan just for you."
+           data-ar="احجز موعدك اليوم. سيقيّم فريقنا احتياجاتك ويضع خطة علاجية مخصصة لك.">
+          Book your appointment today. Our team will assess your needs and create a personalised treatment plan just for you.
         </p>
         <div class="contact-items">
           <div class="contact-item">
@@ -998,7 +1101,7 @@ body.ar .wa-float { right:auto; left:28px; }
                 <label data-en="Service Required" data-ar="الخدمة المطلوبة">Service Required <span class="req">*</span></label>
                 <select required>
                   <option value="" data-en="Select a service..." data-ar="اختر خدمة...">Select a service...</option>
-                  <option data-en="Free Consultation" data-ar="استشارة مجانية">Free Consultation</option>
+                  <option data-en="General Consultation" data-ar="استشارة عامة">General Consultation</option>
                   <option data-en="Teeth Whitening" data-ar="تبييض الأسنان">Teeth Whitening</option>
                   <option data-en="Dental Implants" data-ar="زراعة الأسنان">Dental Implants</option>
                   <option data-en="Orthodontics / Braces" data-ar="تقويم الأسنان">Orthodontics / Braces</option>
@@ -1225,13 +1328,26 @@ const pContainer = document.getElementById('heroParticles');
 // ── TESTIMONIALS SLIDER ──
 let slideIdx = 0;
 function getVisible() { return window.innerWidth > 1024 ? 3 : window.innerWidth > 640 ? 2 : 1; }
+function getCardWidth() {
+  const slider = document.querySelector('.testimonials-slider');
+  const v = getVisible();
+  return (slider.offsetWidth - 24 * (v - 1)) / v;
+}
+function initSlider() {
+  const cw = getCardWidth();
+  document.querySelectorAll('.t-card').forEach(c => { c.style.width = cw + 'px'; });
+  slideIdx = 0;
+  document.getElementById('tTrack').style.transform = 'translateX(0)';
+}
 function slide(dir) {
   const track = document.getElementById('tTrack');
-  const cards = track.children;
-  const max = cards.length - getVisible();
+  const max = track.children.length - getVisible();
   slideIdx = Math.max(0, Math.min(slideIdx + dir, max));
-  track.style.transform = `translateX(${-slideIdx * (cards[0].offsetWidth + 24)}px)`;
+  const cw = getCardWidth();
+  track.style.transform = `translateX(${-slideIdx * (cw + 24)}px)`;
 }
+initSlider();
+window.addEventListener('resize', initSlider);
 setInterval(() => {
   const track = document.getElementById('tTrack');
   const max = track.children.length - getVisible();
